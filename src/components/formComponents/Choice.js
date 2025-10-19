@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { apiRequest } from "../../utils/api";
 import "../../styles/input.css";
 
 function Choice({ id, label, value, onChange, widgetKey }) {
@@ -9,9 +10,7 @@ function Choice({ id, label, value, onChange, widgetKey }) {
     useEffect(() => {
         const fetchChoices = async () => {
             try {
-                const res = await fetch(`https://test.superhero.hu/choice/${widgetKey}`);
-                if (!res.ok) throw new Error("Error on loading of the options");
-                const data = await res.json();
+                const data = await apiRequest(`choice/${widgetKey}`);
                 setOptions(data);
             } catch (err) {
                 setError(err.message);

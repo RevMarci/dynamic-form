@@ -4,6 +4,7 @@ import Text from "./formComponents/Text";
 import Choice from "./formComponents/Choice";
 import SubmitButton from "./SubmitButton";
 import Spinner from "./Spinner";
+import { apiRequest } from "../utils/api";
 import "../styles/FormPage.css";
 
 function FormPage() {
@@ -16,13 +17,7 @@ function FormPage() {
     useEffect(() => {
         const fetchForm = async () => {
             try {
-                const res = await fetch("https://test.superhero.hu/form");
-
-                if (!res.ok) {
-                    throw new Error("Error on loading of the form");
-                }
-
-                const data = await res.json();
+                const data = await apiRequest("form");
                 setFormFields(data);
 
                 const initialData = {};
@@ -47,14 +42,7 @@ function FormPage() {
         setSubmitting(true);
         setError(null);
         try {
-            const res = await fetch("https://test.superhero.hu/save", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
-            });
-
-            if (!res.ok) throw new Error("Hiba a mentéskor");
-            const result = await res.json();
+            const result = await apiRequest("save", "POST", formData);
             console.log("Mentés sikeres:", result);
             alert("Űrlap sikeresen elküldve!");
         } catch (err) {
