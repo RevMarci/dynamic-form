@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Integer.css";
+import "../../styles/input.css";
 
 function Integer({ id, label, value, onChange }) {
     const handleChange = (e) => {
@@ -8,14 +8,14 @@ function Integer({ id, label, value, onChange }) {
     };
 
     return (
-        <div className="integer-field">
+        <div className="field">
         <label htmlFor={id}>{label}</label>
         <input
             id={id}
             type="number"
             value={value}
             onChange={handleChange}
-            className="integer-input"
+            className="input"
         />
         </div>
     );

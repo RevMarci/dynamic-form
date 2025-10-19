@@ -1,4 +1,4 @@
-.integer-field {
+.field {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -6,31 +6,31 @@
     max-width: 100%;
 }
 
-.integer-field label {
+.field label {
     font-weight: 500;
     margin-bottom: 5px;
-    color: #333;
+    color: var(--gray);
 }
 
-.integer-input {
+.input {
     padding: 8px 10px;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-gray);
     border-radius: 6px;
     transition: border-color 0.2s ease;
 }
 
-.integer-input:focus {
+.input:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: var(--blue);
 }
 
 @media (max-width: 600px) {
-    .integer-field {
+    .field {
         width: 80%;
     }
 
-    .integer-input {
+    .input {
         font-size: 1rem;
     }
 }
