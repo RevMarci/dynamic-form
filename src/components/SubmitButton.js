@@ -1,9 +1,17 @@
 import React from "react";
+import "../styles/SubmitButton.css";
 
-function Button() {
+function SubmitButton({ onClick, disabled, label }) {
     return (
-        <p>Im a Button</p>
+        <button
+            type="submit"
+            className="submit-button"
+            onClick={onClick}
+            disabled={disabled}
+        >
+            {label}
+        </button>
     );
 }
 
-export default Button;
+export default SubmitButton;

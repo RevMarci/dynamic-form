@@ -2,7 +2,7 @@ import React from "react";
 
 function Spinner() {
     return (
-        <p>Im a Spinner</p>
+        <p>Loading data...</p>
     );
 }
 
