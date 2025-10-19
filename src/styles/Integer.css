@@ -1,0 +1,36 @@
+.integer-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 300px;
+    max-width: 100%;
+}
+
+.integer-field label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.integer-input {
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.2s ease;
+}
+
+.integer-input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+@media (max-width: 600px) {
+    .integer-field {
+        width: 80%;
+    }
+
+    .integer-input {
+        font-size: 1rem;
+    }
+}
